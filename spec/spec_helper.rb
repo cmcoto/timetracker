@@ -14,6 +14,9 @@ RSpec.configure do |config|
   #config.include Devise::TestHelpers, type: :controller
   config.order = "random"
 
+  config.include Rails.application.routes.url_helpers
+  config.include Capybara::DSL
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
