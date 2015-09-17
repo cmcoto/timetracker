@@ -23,6 +23,6 @@ describe Account do
   end
 
   describe 'associations' do
-    it 'should have owner'
+    it { should belong_to :owner }
   end
 end
