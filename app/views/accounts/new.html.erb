@@ -1,13 +1,23 @@
 <div class="col-md-6 col-md-offset-3 panel panel-default">
-  	<div class="panel-body">
-		<h2>Create an Account</h2>
+  <div class="panel-body">
+    <h2>Create an Account</h2>
 
-		<%= form_for @account do |f| %>
-			<p>
-				<%= f.label :subdomain %>
-				<%= f.text_field :subdomain %>
-			</p>
-			<%= f.submit %>
-		<% end %>
-	</div>
+    <%= simple_form_for @account do |f| %>
+      <%= f.fields_for :owner do |o| %>
+        <%= o.input :name %>
+        <%= o.input :email %>
+        <%= o.input :password %>
+        <%= o.input :password_confirmation %>
+      <% end %>
+
+      <%= f.input :subdomain do %>
+        <div class="input-group">
+          <%= f.input_field :subdomain, class: 'form-control' %>
+          <span class="input-group-addon">.timetracker.dev</span>
+        </div>
+      <% end %>
+
+      <%= f.button :submit, class: 'btn-primary' %>
+    <% end %>
+  </div>
 </div>
