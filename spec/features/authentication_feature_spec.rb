@@ -4,7 +4,7 @@ describe 'user_authentication'  do
   it 'allows signin with valid credentials' do
     user = create(:user)
     sign_user_in(user)
-    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_content('Signed in successfully.')
   end
 
   it 'does not allow signin with invalid credentials' do
@@ -20,7 +20,7 @@ describe 'user_authentication'  do
 
     visit root_path
     click_link 'Sign out'
-    expect(page).to have_content('Signed out successfully')
+    expect(page).to have_content('Signed out successfully.')
   end
 end
 
