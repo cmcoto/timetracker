@@ -6,7 +6,7 @@ development:
   username: postgres
   password: 
   host: localhost
-  
+
 
 test:
   adapter: postgresql
@@ -16,7 +16,7 @@ test:
   username: postgres
   password: 
   host: localhost
-  
+
 
 production:
   adapter: postgresql
