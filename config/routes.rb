@@ -12,6 +12,7 @@ end
 
 Timetracker::Application.routes.draw do
 	constraints(SubdomainPresent) do
+		root 'projects#index', as: :subdomain_root
 		devise_for :users
 	end
 
